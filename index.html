@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mie Ayam</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Mie Gokil</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </header>
+
+    <!------bagian beranda-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1><span id="typewriter"></span></h1>
+            <h2>Masih Yakin <br> Gamau?</h2>
+            <a href="#" class="btn">Daftar Menu</a>
+        </div>
+
+        <div class="home-img">
+            <img src="www.png">
+        </div>
+    </section>
+
+    <!----------bagian about---------->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="noodles.png">
+        </div>
+
+        <div class="about-text">
+            <span>Tentang Kami</span>
+            <h2>Selamat Datang di Mie Gokil!</h2>
+            <p>Kami menyajikan mie ayam lezat dengan resep autentik dan bahan-bahan berkualitas. Setiap mangkuk dibuat dengan penuh cinta, dari mie yang dibuat sendiri hingga ayam pilihan.
+                Visi kami adalah menjadi pilihan utama pecinta mie ayam di Jakarta dan Sekitarnya. Kami berkomitmen untuk menggabungkan tradisi dan inovasi dalam setiap hidangan. Bergabunglah dengan kami dan nikmati kelezatan yang membuat Anda ingin kembali lagi!</p>
+                <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!---------------bagian menu--------->
+    <section class="menu" id="menu">
+        <div class="heading">
+            <span>Daftar Menu</span>
+            <h2>Nikmati Sensasi Luar Biasa dari Semangkuk Mie Ayam</h2>
+        </div>
+
+        <div class="menu-container">
+            <div class="box">
+                <div>
+                    <div class="box-img">
+                        <img src="mieayambiasa.jpg" alt="Mie Ayam Biasa">
+                    </div>
+                    <h2>Mie Ayam Biasa</h2>
+                    <h3>Mie kenyal buatan sendiri, potongan ayam juicy berbumbu, sawi hijau segar, 
+                        daun bawang, bawang goreng renyah, dan kuah kaldu ayam gurih. 
+                        Disajikan dengan sambal dan kecap sesuai selera.</h3>
+                    <span>Rp.11.000,00</span>
+                    <i class="bx bx-cart-alt"></i>
+                </div>
+            
+                <div class="box">
+                    <div>
+                        <div class="box-img">
+                            <img src="mieayambakso.jpg" alt="Mie Ayam Bakso">
+                        </div>
+                        <h2>Mie Ayam Bakso</h2>
+                        <h3> Semua komponen Mie Ayam Biasa ditambah dengan bakso sapi kenyal 
+                            dan kuah bakso yang kaya rasa. Paduan mie ayam dan bakso yang menggugah selera!</h3>
+                        <span>Rp.15.000,00</span>
+                        <i class="bx bx-cart-alt"></i>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!---------------bagian footer--------------------->
+    <section id="contact" class="section contact">
+        <div class="social-media">
+            <a href="https://www.instagram.com/mahawiraa10/" target="_blank">
+                <i class='bx bxl-instagram'></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Mie Gokil. All rights reserved.</p>
+    </section>
+
+
+    <!----------------animasi typewriter----------->
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+        const text = "Mie Ayam Paling Enak";
+        const typingSpeed = 50; // delay typing perhuruf (milisecond)
+        const erasingSpeed = 50; // delay ketika menghapus (milisecond)
+        const waitingTime = 2000; // waktu untuk menunggu sampai diketik kembali
+        let i = 0;
+        let isDeleting = false;
+    
+    function typeWriter() {
+        const typewriter = document.getElementById("typewriter");
+        
+        if (!isDeleting && i <= text.length) {
+            typewriter.innerHTML = text.substring(0, i);
+            i++;
+            setTimeout(typeWriter, typingSpeed);
+        } else if (isDeleting && i >= 0) {
+            typewriter.innerHTML = text.substring(0, i);
+            i--;
+            setTimeout(typeWriter, erasingSpeed);
+        } else {
+            isDeleting = !isDeleting;
+            setTimeout(typeWriter, waitingTime);
+        }
+    }
+    
+    typeWriter();
+});
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
